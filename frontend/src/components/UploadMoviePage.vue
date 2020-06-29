@@ -51,13 +51,13 @@ export default {
         })
         .catch(err => {
           console.error("upload fali!");
-		});
-	  //go to list page
+        });
+      //go to list page
       this.$router.push({ name: "movielist" });
     }
   },
   created() {
-	//get movies
+    //get movies
     this.$http.get(`/movies`).then(response => {
       const movies = response.data;
       this.movie.id = movies.length + 1;

@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <router-link :to="{name: 'querylistpage'}">
+      <img src="./assets/logo.png">
+    </router-link>
     <router-view/>
   </div>
 </template>

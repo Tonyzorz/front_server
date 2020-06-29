@@ -11,15 +11,22 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/movies': {
-        target: 'http://192.168.123.83:3000/movies',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/movies': ''
-        }
-      },
+      // '/movies': {
+      //   target: 'http://192.168.123.83:3000/movies',
+      //   changeOrigin: true,
+      //   pathRewrite: {
+      //     '^/movies': ''
+      //   }
+      // },
       '/find': {
         target: 'http://192.168.123.83:8090/find',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/find': ''
+        }
+      },
+      '/find/:id': {
+        target: 'http://192.168.123.83:8090/find/:id',
         changeOrigin: true,
         pathRewrite: {
           '^/find': ''
@@ -37,6 +44,13 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/queryInsert': ''
+        }
+      },
+      '/queryUpdate': {
+        target: 'http://192.168.123.83:8090/queryUpdate',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/queryUpdate': ''
         }
       }
     },

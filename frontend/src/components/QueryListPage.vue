@@ -1,20 +1,18 @@
 <template>
   <table border="1">
-<router-link :to="{name: 'queryinsertpage'}" tag="button">insert query</router-link>
+    <router-link :to="{name: 'queryinsertpage'}" tag="button">insert query</router-link>
     <tr>
       <td>id</td>
       <td>queryString</td>
       <td>version</td>
-      <td>수정</td>
       <td>삭제</td>
     </tr>
     <tr v-for="query in queryString" v-bind:key="query.id">
       <td>{{query.id}}</td>
-      <td>{{query.queryString}}</td>
+      <router-link :to="{name: 'detailquerypage', params: {id: query.id}}">
+        <td>{{query.queryString}}</td>
+      </router-link>
       <td>{{query.version}}</td>
-      <td>
-        <button>수정</button>
-      </td>
       <td>
         <button name="queryId" v-bind:value="query.id" v-on:click="deleteQuery($event)">삭제</button>
       </td>
@@ -27,7 +25,7 @@
 export default {
   created() {
     this.$http.get("/find").then(response => {
-	  console.log(response);
+      console.log(JSON.stringify(response));
       this.queryString = response.data;
     });
   },
@@ -48,12 +46,14 @@ export default {
           }
         })
         .then(function(response) {
+          this.queryString.$remove(buttonValue);
           console.log(response);
-		})
-		.catch(function (error) {
-	      console.log(error.response)
-		})
-		
+        })
+        .catch(function(error) {
+          console.log(error.response);
+        });
+         //this.$router.push({ name: "querylistpage" });
+
     }
   }
 };
