@@ -5,6 +5,8 @@
       <tr>
         <td>id</td>
         <td>queryString</td>
+        <td>세부 내용</td>
+        <td>디비 타입</td>
         <td>version</td>
         <td>수정</td>
         <!-- <td>삭제</td> -->
@@ -13,6 +15,12 @@
         <td>{{queryString.id}}</td>
         <td>
           <input type="text" name="queryString" v-model="queryString.queryString" />
+        </td>
+        <td>
+          <input type="text" name="desc" v-model="queryString.desc" />
+        </td>
+        <td>
+          <input type="text" name="sqlType" v-model="queryString.sqlType" />
         </td>
         <td>{{queryString.version}}</td>
         <td>

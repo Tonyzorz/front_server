@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <router-link :to="{name: 'querylistpage'}">
-      querylist
-    </router-link>
-    <img src="./assets/logo.png">
-    <router-link :to="{name: 'propertylistpage'}">
-      propertylist
-    </router-link>
-    <router-link :to="{name: 'instancelistpage'}">
-      instancelist
-    </router-link>
-    <router-view/>
+    <div class="header">
+      <div class="header-right">
+        <div class="active">
+          <router-link :to="{name: 'querylistpage'}">querylist</router-link>
+        </div>
+        <div>
+          <router-link :to="{name: 'propertylistpage'}">propertylist</router-link>
+        </div>
+        <div>
+          <router-link :to="{name: 'instancelistpage'}">propertylist</router-link>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

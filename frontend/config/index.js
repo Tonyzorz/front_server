@@ -12,45 +12,122 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       // '/movies': {
-      //   target: 'http://192.168.123.83:3000/movies',
+      //   target: 'http://192.168.11.6:3000/movies',
       //   changeOrigin: true,
       //   pathRewrite: {
       //     '^/movies': ''
       //   }
       // },
       '/find': {
-        target: 'http://192.168.123.83:8090/find',
+        target: 'http://192.168.11.6:18090/find',
         changeOrigin: true,
         pathRewrite: {
-          '^/find': ''
+          '/find': ''
+        }
+      },
+      '/propertyfind': {
+        target: 'http://192.168.11.6:18090/propertyfind',
+        changeOrigin: true,
+        pathRewrite: {
+          '/propertyfind': ''
+        }
+      },
+      '/instancefind': {
+        target: 'http://192.168.11.6:18090/instancefind',
+        changeOrigin: true,
+        pathRewrite: {
+          '/instancefind': ''
         }
       },
       '/find/:id': {
-        target: 'http://192.168.123.83:8090/find/:id',
+        target: 'http://192.168.11.6:18090/find/:id',
         changeOrigin: true,
         pathRewrite: {
-          '^/find': ''
+          '/find': ''
+        }
+      },
+      '/propertyfind/:id': {
+        target: 'http://192.168.11.6:18090/propertyfind/:id',
+        changeOrigin: true,
+        pathRewrite: {
+          '/propertyfind': ''
+        }
+      },
+      '/instancefind/:id': {
+        target: 'http://192.168.11.6:18090/instancefind/:id',
+        changeOrigin: true,
+        pathRewrite: {
+          '/instancefind': ''
         }
       },
       '/delete': {
-        target: 'http://192.168.123.83:8090/delete/:id',
+        target: 'http://192.168.11.6:18090/delete/:id',
         changeOrigin: true,
         pathRewrite: {
           '^/delete': ''
         }
       },
+      '/propertyDelete': {
+        target: 'http://192.168.11.6:18090/propertyDelete/:id',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/propertyDelete': ''
+        }
+      },
+      '/instanceDelete': {
+        target: 'http://192.168.11.6:18090/instanceDelete/:id',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/instanceDelete': ''
+        }
+      },
       '/queryInsert': {
-        target: 'http://192.168.123.83:8090/queryInsert',
+        target: 'http://192.168.11.6:18090/queryInsert',
         changeOrigin: true,
         pathRewrite: {
           '^/queryInsert': ''
         }
       },
+      '/propertyInsert': {
+        target: 'http://192.168.11.6:18090/propertyInsert',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/propertyInsert': ''
+        }
+      },
+      '/instanceInsert': {
+        target: 'http://192.168.11.6:18090/instanceInsert',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/instanceInsert': ''
+        }
+      },
       '/queryUpdate': {
-        target: 'http://192.168.123.83:8090/queryUpdate',
+        target: 'http://192.168.11.6:18090/queryUpdate',
         changeOrigin: true,
         pathRewrite: {
           '^/queryUpdate': ''
+        }
+      },
+      '/propertyUpdate': {
+        target: 'http://192.168.11.6:18090/propertyUpdate',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/propertyUpdate': ''
+        }
+      },
+      '/instanceUpdate': {
+        target: 'http://192.168.11.6:18090/instanceUpdate',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/instanceUpdate': ''
+        }
+      },
+      '/headerData': {
+        target: 'http://192.168.11.6:18090/headerData',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/headerData': ''
         }
       }
     },
